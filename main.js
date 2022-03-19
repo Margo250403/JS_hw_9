@@ -61,3 +61,24 @@ var users = [
 
 }]
 
+var table = document.querySelector('#table');
+
+for(var i = 0; i < users.length; i++){
+     table.innerHTML += 
+     `<tr class='tr'>
+          <td>${users[i].id}</td>
+          <td>${users[i].first_name}</td>
+          <td>${users[i].last_name}</td>
+          <td>${users[i].email}</td>
+     </tr>`
+}
+
+var row = document.querySelectorAll('.tr');
+
+row.forEach((element, index)=>{
+     element.addEventListener('click', function(){
+          console.log(users[index].first_name)
+          element.classList.toggle('green')
+     })
+})
+console.log(row);
